@@ -25,7 +25,7 @@ exports.deleteBook = (req, res) =>
 
 exports.bookSearch = (req, res) =>
 {
-    let searchTitle = req.body.title.replace(/\s/g, "+");
+    let searchTitle = req.params.title.replace(/\s/g, "+");
 
     axios.get("https://www.googleapis.com/books/v1/volumes?q=" + searchTitle)
     .then((response) =>

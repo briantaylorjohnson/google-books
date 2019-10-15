@@ -16,6 +16,6 @@ router.put("/delete_book", googleBooksController.deleteBook);
 */
 
 // Search for books by title using the Google Books API
-router.get("/book_search", googleBooksController.bookSearch);
+router.get("/book_search/:title", googleBooksController.bookSearch);
 
 module.exports = router;
