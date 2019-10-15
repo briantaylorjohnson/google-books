@@ -7,12 +7,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 class App extends Component
 {
-  // State management for application
-  state =
-  {
-
-  }
-
   render()
   {
     return (
