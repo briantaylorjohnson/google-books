@@ -1,2 +1,2 @@
 // Export Search component from Search.js
-export {default} from "./Search"
+export {SearchContainer, Search, Results, ResultListing} from "./Search"
