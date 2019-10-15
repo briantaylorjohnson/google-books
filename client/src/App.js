@@ -8,7 +8,7 @@ class App extends Component {
     post: '',
     responseToPost: '',
   };
-  
+  /*
   componentDidMount() {
     this.callApi()
       .then(res => this.setState({ response: res.express }))
@@ -36,7 +36,7 @@ class App extends Component {
     
     this.setState({ responseToPost: body });
   };
-  
+*/
 render() {
     return (
       <div className="App">
@@ -54,6 +54,7 @@ render() {
             Learn React
           </a>
         </header>
+        {/*
         <p>{this.state.response}</p>
         <form onSubmit={this.handleSubmit}>
           <p>
@@ -67,6 +68,7 @@ render() {
           <button type="submit">Submit</button>
         </form>
         <p>{this.state.responseToPost}</p>
+        */}
       </div>
     );
   }
