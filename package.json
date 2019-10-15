@@ -1,0 +1,29 @@
+{
+  "name": "google-books",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "description": "Georgia Tech Coding Bootcamp - Homework 16: Google Books Search",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briantaylorjohnson/google-books.git"
+  },
+  "author": "BTJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/briantaylorjohnson/google-books/issues"
+  },
+  "homepage": "https://github.com/briantaylorjohnson/google-books#readme"
+}
