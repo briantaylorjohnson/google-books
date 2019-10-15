@@ -1,6 +1,9 @@
 {
   "name": "google-books",
   "version": "1.0.0",
+  "engines": {
+    "yarn": "1.x"
+  },
   "scripts": {
     "client": "cd client && yarn start",
     "server": "nodemon server.js",
