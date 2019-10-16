@@ -1,6 +1,6 @@
 import React from "react";
 import "./Results.css";
-import {ResultListing} from "./ResultListing"
+import ResultListing from "./ResultListing"
 
 export function Results(props)
 {
@@ -17,7 +17,7 @@ export function Results(props)
             authors={bookDetails.authors}
             description={bookDetails.description}
             link={bookDetails.canonicalVolumeLink}
-            img={bookDetails.imageLinks.smallThumbnail}
+            image={bookDetails.imageLinks.smallThumbnail}
             key={book.id}
           />
         )

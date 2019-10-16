@@ -6,17 +6,35 @@ var axios = require("axios");
 // Ensuring that all models are required
 var db = require("../models");
 
-/*
+
 exports.getBooks = (req, res) => 
 {
-
+    db.Book.find().then(function(dbBooks)
+    {
+        res.json(dbBooks);
+    })
+    .catch(function(err)
+    {
+        res.json(err);
+    });
 };
+
 
 exports.saveBook = (req, res) => 
 {
+    db.Book.create(req.body).then(
+        (response) => {
+            res.json("Your book has been successfully saved!");
+        }
+    ).catch(
+        (err) => {
+            res.json(err);
+        }
+    );
 
 };
 
+/*
 exports.deleteBook = (req, res) =>
 {
 
