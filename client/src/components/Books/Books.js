@@ -39,10 +39,15 @@ class Books extends React.Component
     return (
       <div className="container book-search-results pl-3 pt-3 pr-3 pb-3 mt-3">
             <h5>Saved Books</h5>
-              <Results 
-                bookData={this.state.savedBooks}
-                page={this.state.page}
-              />
+            {
+              !(this.state.savedBooks.length > 0)?
+                "No Saved Books"
+                :
+                <Results 
+                  bookData={this.state.savedBooks}
+                  page={this.state.page}
+                />
+            }
       </div>
     );
   }
