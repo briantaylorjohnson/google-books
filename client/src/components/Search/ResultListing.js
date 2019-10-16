@@ -15,7 +15,7 @@ class ResultListing extends React.Component
         }
 
        this.handleSaveBook = this.handleSaveBook.bind(this);
-       // this.handleDeleteBook = this.handleDeleteBook.bind(this);
+       this.handleDeleteBook = this.handleDeleteBook.bind(this);
     }
 
     handleSaveBook = (b) =>
@@ -45,6 +45,27 @@ class ResultListing extends React.Component
         });
     }
 
+    handleDeleteBook = (b) =>
+    {
+        this.setState({deleted: true});
+
+        const bookId = this.props.id;
+
+        b.preventDefault();
+
+        API.deleteBook(bookId)
+        .then(
+            (res) =>
+            {
+                console.log(res);
+                
+            }
+        ).catch( (err) =>
+        {
+            console.log(err)
+        });
+    }
+
     render()
     {
         return (
@@ -63,7 +84,14 @@ class ResultListing extends React.Component
                         </span>
                         <span>{this.props.description}<br /></span>
                         <a className="mt-3 mr-1" href={this.props.link} target="_blank" rel="noopener noreferrer"><button className="btn btn-sm btn-success">View</button></a>
-                        <button className="btn btn-sm btn-success mt-3 mb-3 ml-1" onClick={this.handleSaveBook}>Save</button>
+                        
+                        {!(this.props.page === "search")? 
+                            null : <button className="btn btn-sm btn-success mt-3 mb-3 ml-1" onClick={this.handleSaveBook}>Save</button>
+                        }
+
+                        {!(this.props.page === "books")?
+                            null : <button className="btn btn-sm btn-danger mt-3 mb-3 ml-1" onClick={this.handleDeleteBook}>Delete</button>
+                        }
                     </div>
                 </div>
             </div>

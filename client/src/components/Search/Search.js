@@ -12,10 +12,15 @@ class Search extends React.Component
     this.state =
     {
       bookTitle: "",
-      bookData: []
+      bookData: [],
+      page: "search"
     }
     this.searchTitleChange = this.searchTitleChange.bind(this);
     this.searchButtonClick = this.searchButtonClick.bind(this);
+  }
+
+  componentDidMount() {
+    console.log(this.state.page);
   }
 
   searchTitleChange(c)
@@ -55,9 +60,12 @@ class Search extends React.Component
         <div className="container book-search-results pl-3 pt-3 pr-3 pb-3 mt-3">
           <h5>Search Results</h5>
           {(this.state.bookData.length > 0)?
-                <Results bookData={this.state.bookData}/> : "No Search Results"
+                <Results
+                  bookData={this.state.bookData}
+                  page={this.state.page}
+                /> : "No Search Results"
           }
-          </div>
+        </div>
       </div>
     );
   }

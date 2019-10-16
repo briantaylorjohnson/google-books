@@ -34,12 +34,19 @@ exports.saveBook = (req, res) =>
 
 };
 
-/*
+
 exports.deleteBook = (req, res) =>
 {
+    db.Book.deleteOne({_id: req.params.id}).then(function(deletedBook)
+    {
+        res.json("Book deleted successfully!");
 
+    }).catch(function(err)
+    {
+        res.json(err);
+    });
 };
-*/
+
 
 exports.bookSearch = (req, res) =>
 {
